@@ -25,8 +25,8 @@ namespace PSuite.Dal.AbstractClass
 
         public int Add(Dictionary<string, string> param)
         {
-            string fieldName = "";
-
+            string fieldNames = "";
+            string fieldValues = "";
             return MySqlDbHelper.ExecuteSql("");
         }
 
