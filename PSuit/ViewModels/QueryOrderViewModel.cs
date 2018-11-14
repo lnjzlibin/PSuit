@@ -1,12 +1,7 @@
 ﻿using Microsoft.Practices.Prism.Mvvm;
 using PSuit.Infrastructure.Abstract.Presentation.AbstractClass;
 using PSuit.Infrastructure.Abstract.Presentation.Interface;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PSuite.ViewModels
 {

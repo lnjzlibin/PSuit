@@ -69,7 +69,7 @@ namespace PSuite.Dal
                         int rows = cmd.ExecuteNonQuery();
                         return rows;
                     }
-                    catch (System.Data.SqlClient.SqlException E)
+                    catch (MySqlException E)
                     {
                         connection.Close();
                         throw new Exception(E.Message);
@@ -104,7 +104,7 @@ namespace PSuite.Dal
                     }
                     tx.Commit();
                 }
-                catch (System.Data.SqlClient.SqlException E)
+                catch (MySqlException E)
                 {
                     tx.Rollback();
                     throw new Exception(E.Message);
@@ -131,7 +131,7 @@ namespace PSuite.Dal
                     int rows = cmd.ExecuteNonQuery();
                     return rows;
                 }
-                catch (System.Data.SqlClient.SqlException E)
+                catch (MySqlException E)
                 {
                     throw new Exception(E.Message);
                 }
@@ -162,7 +162,7 @@ namespace PSuite.Dal
                     int rows = cmd.ExecuteNonQuery();
                     return rows;
                 }
-                catch (System.Data.SqlClient.SqlException E)
+                catch (MySqlException E)
                 {
                     throw new Exception(E.Message);
                 }
@@ -198,7 +198,7 @@ namespace PSuite.Dal
                             return obj;
                         }
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (MySqlException e)
                     {
                         connection.Close();
                         throw new Exception(e.Message);
@@ -232,22 +232,22 @@ namespace PSuite.Dal
         /// </summary>
         /// <param name="SQLString">查询语句</param>
         /// <returns>DataSet</returns>
-        public static DataSet Query(string SQLString)
+        public static DataTable Query(string SQLString)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
                 try
                 {
                     connection.Open();
                     MySqlDataAdapter command = new MySqlDataAdapter(SQLString, connection);
-                    command.Fill(ds, "ds");
+                    command.Fill(dt);
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                catch (MySqlException ex)
                 {
                     throw new Exception(ex.Message);
                 }
-                return ds;
+                return dt;
             }
         }
 
@@ -274,7 +274,7 @@ namespace PSuite.Dal
                         cmd.Parameters.Clear();
                         return rows;
                     }
-                    catch (System.Data.SqlClient.SqlException E)
+                    catch (MySqlException E)
                     {
                         throw new Exception(E.Message);
                     }
@@ -344,7 +344,7 @@ namespace PSuite.Dal
                             return obj;
                         }
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (MySqlException e)
                     {
                         throw new Exception(e.Message);
                     }
@@ -368,7 +368,7 @@ namespace PSuite.Dal
                 cmd.Parameters.Clear();
                 return myReader;
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (MySqlException e)
             {
                 throw new Exception(e.Message);
             }
@@ -380,7 +380,7 @@ namespace PSuite.Dal
         /// </summary>
         /// <param name="SQLString">查询语句</param>
         /// <returns>DataSet</returns>
-        public static DataSet Query(string SQLString, params MySqlParameter[] cmdParms)
+        public static DataTable Query(string SQLString, params MySqlParameter[] cmdParms)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -388,17 +388,17 @@ namespace PSuite.Dal
                 PrepareCommand(cmd, connection, null, SQLString, cmdParms);
                 using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
                 {
-                    DataSet ds = new DataSet();
+                    DataTable dt = new DataTable();
                     try
                     {
-                        da.Fill(ds, "ds");
+                        da.Fill(dt);
                         cmd.Parameters.Clear();
                     }
-                    catch (System.Data.SqlClient.SqlException ex)
+                    catch (MySqlException ex)
                     {
                         throw new Exception(ex.Message);
                     }
-                    return ds;
+                    return dt;
                 }
             }
         }

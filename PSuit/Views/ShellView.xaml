@@ -12,7 +12,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="0"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -23,35 +23,17 @@
 
             </MenuItem>
             <MenuItem Header="销售订单管理">
-                <MenuItem Header="销售订单录入" Command="{Binding AddOrderCommand}" ></MenuItem>
-                <MenuItem Header="销售订单查询" Command="{Binding QueryOrderCommand}"></MenuItem>
-                
+                <MenuItem Header="销售订单管理" Command="{Binding QueryAllOrderCommand}" ></MenuItem>                
             </MenuItem>
             <MenuItem Header="客户信息管理">
-                <MenuItem Header="客户信息录入" Command="{Binding AddCustomerCommand}">
-                    
+                <MenuItem Header="客户信息管理" Command="{Binding QueryAllCustomerCommand}">                    
                 </MenuItem>
-                <MenuItem Header="客户信息查询" Command="{Binding QueryCustomerCommand}">
-
-                </MenuItem>
+               
             </MenuItem>
-            <MenuItem Header="关于"></MenuItem>
+            
         </Menu>
       
-        <TreeView Grid.Row="1">
-            <TreeViewItem Header="销售订单管理" >
-                <TreeViewItem Header="销售订单录入"  >
-                    
-                </TreeViewItem>
-                <TreeViewItem Header="销售订单查询" />
-            </TreeViewItem>
-            <TreeViewItem Header="客户信息管理" >
-                <TreeViewItem Header="客户信息录入" >
-
-                </TreeViewItem>
-                <TreeViewItem Header="客户信息查询" />
-            </TreeViewItem>
-        </TreeView>
+        
         <TabControl Grid.Row="1" Grid.Column="1" x:Name="MainTabControl">
             <TabControl.Background>
                 <ImageBrush ImageSource="..\Resources\mainground.png"/>

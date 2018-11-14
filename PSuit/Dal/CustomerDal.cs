@@ -1,4 +1,5 @@
-﻿using PSuite.Models;
+﻿using PSuite.Dal.AbstractClass;
+using PSuite.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace PSuite.Dal
 {
-    public class CustomerDal
+    public class CustomerDal:BaseDal
     {
-        public int Add(Customer customer)
+        public CustomerDal()
         {
-
-            return MySqlDbHelper.ExecuteSql("");
+            this.TableName = "T_Customer";
         }
+        
     }
 }

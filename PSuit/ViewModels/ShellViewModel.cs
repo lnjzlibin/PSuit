@@ -17,8 +17,10 @@ namespace PSuite.ViewModels
     {
         public DelegateCommand AddOrderCommand { get; private set; }
         public DelegateCommand QueryOrderCommand { get; private set; }
+        public DelegateCommand QueryAllOrderCommand { get; private set; }
         public DelegateCommand AddCustomerCommand { get; private set; }
         public DelegateCommand QueryCustomerCommand { get; private set; }
+        public DelegateCommand QueryAllCustomerCommand { get; private set; }
         public DelegateCommand ExitCommand { get; private set; }
 
         [ImportingConstructor]
@@ -28,32 +30,43 @@ namespace PSuite.ViewModels
             this.View.DataContext = this;
             AddOrderCommand = new DelegateCommand(AddOrder);
             QueryOrderCommand = new DelegateCommand(QueryOrder);
+            QueryAllOrderCommand = new DelegateCommand(QueryAllOrder);
             AddCustomerCommand = new DelegateCommand(AddCustomer);
             QueryCustomerCommand = new DelegateCommand(QueryCustomer);
+            QueryAllCustomerCommand = new DelegateCommand(QueryAllCustomer);
 
             ExitCommand = new DelegateCommand(Exit);
         }
         public void AddOrder()
         {
-            OpenTabItem("MainTabControl", "销售订单录入", "AddOrderView");
+            //OpenTabItem("MainTabControl", "销售订单录入", "AddOrderView");
 
         }
         public void QueryOrder()
         {
-            OpenTabItem("MainTabControl", "销售订单查询", "QueryOrderView");
+            //OpenTabItem("MainTabControl", "销售订单查询", "QueryOrderView");
+        }
+        public void QueryAllOrder()
+        {
+            OpenTabItem("MainTabControl", "销售订单管理", "QueryAllOrderView");
         }
         public void AddCustomer()
         {
-            OpenTabItem("MainTabControl", "客户信息录入", "AddCustomerView");
+            //OpenTabItem("MainTabControl", "客户信息录入", "AddCustomerView");
         }
         public void QueryCustomer()
         {
-            OpenTabItem("MainTabControl", "客户信息查询", "QueryCustomerView");
+            //OpenTabItem("MainTabControl", "客户信息查询", "QueryCustomerView");
+        }
+        public void QueryAllCustomer()
+        {
+            IViewModel queryAllCustomerViewModel = ServiceLocator.Current.GetInstance<IViewModel>("QueryAllCustomerViewModel");
+            OpenTabItem("MainTabControl", "客户信息管理", "QueryAllCustomerView");
         }
         private void OpenTabItem(string tabControlName, string tabItemName, string viewName)
         {
+
             
-           
             TabControl tc = ((TabControl)(((ShellView)(this.View)).FindName(tabControlName)));
             if (!HasTabItem(tc, tabItemName))
             {

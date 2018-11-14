@@ -115,6 +115,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bll\CustomerService.cs" />
     <Compile Include="Dal\AbstractClass\BaseDal.cs" />
     <Compile Include="Dal\CustomerDal.cs" />
     <Compile Include="Dal\MySqlDbHelper.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="ViewModels\AddCustomerViewModel.cs" />
     <Compile Include="ViewModels\AddOrderViewModel.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
+    <Compile Include="ViewModels\QueryAllCustomerViewModel.cs" />
     <Compile Include="ViewModels\QueryCustomerViewModel.cs" />
     <Compile Include="ViewModels\QueryOrderViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -141,6 +143,9 @@
     </Compile>
     <Compile Include="Views\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QueryAllCustomerView.xaml.cs">
+      <DependentUpon>QueryAllCustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\QueryCustomerView.xaml.cs">
       <DependentUpon>QueryCustomerView.xaml</DependentUpon>
@@ -206,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LogInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QueryAllCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

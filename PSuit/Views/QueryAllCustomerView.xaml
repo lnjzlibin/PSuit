@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PSuite.Views.QueryAllCustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PSuite.Views"
+             mc:Ignorable="d" 
+            >
+    <Grid>
+        <DataGrid Name="dgCustomer" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Customers}">
+            <DataGrid.Columns>                
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Ellipse Height="10" Width="10" Fill="{Binding FillColor}"></Ellipse>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="ID" Width="100" Binding="{Binding CustomerID}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="姓名" Width="100" Binding="{Binding CustomerName}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="联系电话" Width="100" Binding="{Binding PhoneCode}"></DataGridTextColumn>              
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
