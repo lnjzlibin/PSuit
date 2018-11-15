@@ -7,7 +7,11 @@
              mc:Ignorable="d" 
             >
     <Grid>
-        <DataGrid Name="dgCustomer" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Customers}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="dgCustomer" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Customers}" Background="Transparent">
             <DataGrid.Columns>                
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -21,5 +25,15 @@
                 <DataGridTextColumn IsReadOnly="True" Header="联系电话" Width="100" Binding="{Binding PhoneCode}"></DataGridTextColumn>              
             </DataGrid.Columns>
         </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Width="100" Height="30" Content="添加客户" Command="{Binding AddCustomerCommand}"/>
+            <Button Width="100" Height="30" Content="删除客户" Command="{Binding DeleteCustomerCommand}" Grid.Column="1"/>
+            <Button Width="100" Height="30" Content="修改客户" Command="{Binding UpdateCustomerCommand}" Grid.Column="2"/>
+        </Grid>
     </Grid>
 </UserControl>

@@ -1,19 +1,30 @@
-﻿using Microsoft.Practices.Prism.Mvvm;
+﻿using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Mvvm;
 using PSuit.Infrastructure.Abstract.Presentation.AbstractClass;
 using PSuit.Infrastructure.Abstract.Presentation.Interface;
 using System.ComponentModel.Composition;
+using System;
+using PSuite.Bll;
 
 namespace PSuite.ViewModels
 {
     [Export("AddCustomerViewModel", typeof(IViewModel))]
     public class AddCustomerViewModel : ViewModelBase
     {
+        public DelegateCommand AddCustomerCommand { get; private set; }
+
         [ImportingConstructor]
         public AddCustomerViewModel([Import("AddCustomerView", typeof(IView))]  IView view)
         {
+            AddCustomerCommand = new DelegateCommand(AddCustomer);
             this.View = view;
             this.View.DataContext = this;
+        }
 
+        private void AddCustomer()
+        {
+            CustomerService service = new CustomerService();
+            service.AddCustomer();
         }
     }
 }

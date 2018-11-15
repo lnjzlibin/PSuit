@@ -18,7 +18,6 @@ namespace PSuite.ViewModels
         public DelegateCommand AddOrderCommand { get; private set; }
         public DelegateCommand QueryOrderCommand { get; private set; }
         public DelegateCommand QueryAllOrderCommand { get; private set; }
-        public DelegateCommand AddCustomerCommand { get; private set; }
         public DelegateCommand QueryCustomerCommand { get; private set; }
         public DelegateCommand QueryAllCustomerCommand { get; private set; }
         public DelegateCommand ExitCommand { get; private set; }
@@ -31,7 +30,7 @@ namespace PSuite.ViewModels
             AddOrderCommand = new DelegateCommand(AddOrder);
             QueryOrderCommand = new DelegateCommand(QueryOrder);
             QueryAllOrderCommand = new DelegateCommand(QueryAllOrder);
-            AddCustomerCommand = new DelegateCommand(AddCustomer);
+           
             QueryCustomerCommand = new DelegateCommand(QueryCustomer);
             QueryAllCustomerCommand = new DelegateCommand(QueryAllCustomer);
 
@@ -50,10 +49,7 @@ namespace PSuite.ViewModels
         {
             OpenTabItem("MainTabControl", "销售订单管理", "QueryAllOrderView");
         }
-        public void AddCustomer()
-        {
-            //OpenTabItem("MainTabControl", "客户信息录入", "AddCustomerView");
-        }
+        
         public void QueryCustomer()
         {
             //OpenTabItem("MainTabControl", "客户信息查询", "QueryCustomerView");
