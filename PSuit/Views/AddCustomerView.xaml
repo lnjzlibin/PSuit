@@ -23,9 +23,9 @@
         <TextBlock Grid.ColumnSpan="3" Text="添加客户" HorizontalAlignment="Center" FontSize="50" Foreground="WhiteSmoke"/>
 
         <TextBlock Grid.Row="1"  Text="客户名称"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
-        <TextBox Grid.Row=" 1" Grid.Column="1" x:Name="tbxCustomer" Background="Transparent" Height="30" VerticalAlignment="Center" Text="{Binding }"/>
+        <TextBox Grid.Row=" 1" Grid.Column="1" x:Name="tbxCustomer" Background="Transparent" Height="30" VerticalAlignment="Center" Text="{Binding Path=Customer.CustomerName }"/>
         <TextBlock Grid.Row="2" Text="联系电话" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
-        <TextBox Grid.Row=" 2" Grid.Column="1" x:Name="tbxPhoneCode" Background="Transparent" Height="30" VerticalAlignment="Center"/>
+        <TextBox Grid.Row=" 2" Grid.Column="1" x:Name="tbxPhoneCode" Background="Transparent" Height="30" VerticalAlignment="Center" Text="{Binding Path=PhoneCode}"/>
         <Button Grid.Row="3" Grid.Column="1" Content="添加" Height="30" Width="80" Command="{Binding AddCustomerCommand}"/>
 
     </Grid>

@@ -5,6 +5,7 @@ using PSuit.Infrastructure.Abstract.Presentation.Interface;
 using System.ComponentModel.Composition;
 using System;
 using PSuite.Bll;
+using PSuite.Models;
 
 namespace PSuite.ViewModels
 {
@@ -24,7 +25,10 @@ namespace PSuite.ViewModels
         private void AddCustomer()
         {
             CustomerService service = new CustomerService();
-            service.AddCustomer();
+            Customer customer = new Customer();
+            customer.CustomerName = "";
+            customer.PhoneCode = "";
+            service.AddCustomer(customer);
         }
     }
 }

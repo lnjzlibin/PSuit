@@ -1,15 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PSuite.Models
+﻿namespace PSuite.Models
 {
     public class User
     {
+        private int userID;
         private string userName;
         private string password;
+        private string isValid;
+
+        public int UserID
+        {
+            get
+            {
+                return userID;
+            }
+
+            set
+            {
+                userID = value;
+            }
+        }
 
         public string UserName
         {
@@ -36,5 +45,20 @@ namespace PSuite.Models
                 password = value;
             }
         }
+
+        public string IsValid
+        {
+            get
+            {
+                return isValid;
+            }
+
+            set
+            {
+                isValid = value;
+            }
+        }
+
+       
     }
 }

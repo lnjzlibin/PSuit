@@ -116,9 +116,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bll\CustomerService.cs" />
+    <Compile Include="Bll\LogInService.cs" />
+    <Compile Include="Bll\UserService.cs" />
     <Compile Include="Dal\AbstractClass\BaseDal.cs" />
     <Compile Include="Dal\CustomerDal.cs" />
     <Compile Include="Dal\MySqlDbHelper.cs" />
+    <Compile Include="Dal\UserDal.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="QuickStartBootstrapper.cs" />

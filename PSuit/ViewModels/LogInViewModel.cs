@@ -7,6 +7,8 @@ using System.Windows.Input;
 using System.Windows;
 using Microsoft.Practices.ServiceLocation;
 using PSuite.Views;
+using PSuite.Bll;
+using PSuite.Models;
 
 namespace PSuite.ViewModels
 {
@@ -38,11 +40,21 @@ namespace PSuite.ViewModels
         
         public void LogIn()
         {
-
-            IViewModel shellViewModel = ServiceLocator.Current.GetInstance<IViewModel>("ShellViewModel");
-            IView shellView = ServiceLocator.Current.GetInstance<IView>("ShellView");
-           ((ShellView)(shellView)).Show();
-            ((LogInView)(this.View)).Visibility = Visibility.Collapsed;
+            LogInService service = new LogInService();
+            User user = (User)((LogInView)(this.View)).Resources.FindName("user");
+            user.UserName = "";
+            user.Password = "";
+            if (service.HasUserAndAuthority(user))
+            {
+                IViewModel shellViewModel = ServiceLocator.Current.GetInstance<IViewModel>("ShellViewModel");
+                IView shellView = ServiceLocator.Current.GetInstance<IView>("ShellView");
+                ((ShellView)(shellView)).Show();
+                ((LogInView)(this.View)).Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                MessageBox.Show("用户名或密码不正确，请重新输入");
+            }
         }
 
 

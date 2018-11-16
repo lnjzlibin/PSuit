@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PSuite.Views"
+        xmlns:Model="clr-namespace:PSuite.Models"
         mc:Ignorable="d"
         Title="登录" Height="480" Width="600">
     <Grid>
+        <Grid.Resources>
+            <Model:User x:Key="user"/>
+        </Grid.Resources>
         <Grid.Background>
             <ImageBrush ImageSource="..\Resources\background.png"/>
         </Grid.Background>
@@ -30,8 +34,8 @@
             <Label Grid.Row="0" Grid.Column="1" Content="用户名:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Grid.Row="1" Grid.Column="1" Content="密  码:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button x:Name="btnLogIn" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="登录" Width="100" Margin="10" Command="{Binding LogInCommand }"/>
-            <TextBox x:Name="tbxUserName" Grid.Row="0" Grid.Column="2" Height="30"/>
-            <PasswordBox x:Name="password" Grid.Row="1" Grid.Column="2" Height="30" />
+            <TextBox x:Name="tbxUserName"  Grid.Row="0" Grid.Column="2" Height="30" Text="{Binding UserName, Source={StaticResource user}}"  />
+            <PasswordBox x:Name="password" Grid.Row="1" Grid.Column="2" Height="30"  />
         </Grid>
     </Grid>
 </Window>
