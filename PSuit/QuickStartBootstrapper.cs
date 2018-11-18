@@ -2,10 +2,10 @@
 using Prism.Mef;
 using PSuit.Infrastructure.Abstract.Presentation.Interface;
 using System.ComponentModel.Composition.Hosting;
-using PSuite.Views;
+using PSuit.Views;
 using Prism.Regions;
 
-namespace PSuite
+namespace PSuit
 {
     public class QuickStartBootstrapper: MefBootstrapper
     {

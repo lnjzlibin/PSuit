@@ -3,7 +3,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.Collections;
 
-namespace PSuite.Dal
+namespace PSuit.Dal
 {
     public static class MySqlDbHelper
     {

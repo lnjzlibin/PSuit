@@ -4,13 +4,13 @@ using Microsoft.Practices.Prism.Mvvm;
 using PSuit.Infrastructure.Abstract.Presentation.AbstractClass;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.ServiceLocation;
-using PSuite.Views;
+using PSuit.Views;
 using System.Windows;
 using System.Windows.Controls;
 using System;
-using PSuite.Models;
+using PSuit.Models;
 
-namespace PSuite.ViewModels
+namespace PSuit.ViewModels
 {
     [Export("ShellViewModel", typeof(IViewModel))]
     public class ShellViewModel : ViewModelBase

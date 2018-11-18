@@ -1,4 +1,4 @@
-﻿namespace PSuite.Models
+﻿namespace PSuit.Models
 {
     public   class Customer
     {

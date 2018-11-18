@@ -1,9 +1,9 @@
-﻿using PSuite.Dal;
-using PSuite.Models;
+﻿using PSuit.Dal;
+using PSuit.Models;
 using System.Collections.Generic;
 using System.Data;
 
-namespace PSuite.Bll
+namespace PSuit.Bll
 {
     public class UserService
     {

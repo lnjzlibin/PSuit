@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSuite.Dal.AbstractClass
+namespace PSuit.Dal.AbstractClass
 {
    public abstract class BaseDal
     {
@@ -27,15 +27,15 @@ namespace PSuite.Dal.AbstractClass
         public int Add(Dictionary<string, string> param)
         {
             string fieldNames = "";
-            string fieldValues = "";
+            string fieldValues = "'";
             foreach (var item in param)
             {
                 fieldNames += item.Key + ",";
-                fieldValues += item.Value + ",";
+                fieldValues += item.Value + "','";
             }
             fieldNames = fieldNames.Substring(0, fieldNames.Length - 1);
-            fieldValues = fieldValues.Substring(0, fieldValues.Length - 1);
-            return MySqlDbHelper.ExecuteSql(string.Format("insert into  {0}({1})values()",tableName,fieldNames,fieldValues));
+            fieldValues = fieldValues.Substring(0, fieldValues.Length - 2);
+            return MySqlDbHelper.ExecuteSql(string.Format("insert into  {0}({1})values({2})",tableName,fieldNames,fieldValues));
         }
         public int Delete(int ID)
         {

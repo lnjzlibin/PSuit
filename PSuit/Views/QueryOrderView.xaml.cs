@@ -2,7 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Windows.Controls;
 
-namespace PSuite.Views
+namespace PSuit.Views
 {
     [Export("QueryOrderView", typeof(IView))]
     public partial class QueryOrderView : UserControl, IView

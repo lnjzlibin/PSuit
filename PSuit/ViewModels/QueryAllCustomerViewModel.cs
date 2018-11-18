@@ -3,14 +3,14 @@ using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.ServiceLocation;
 using PSuit.Infrastructure.Abstract.Presentation.AbstractClass;
 using PSuit.Infrastructure.Abstract.Presentation.Interface;
-using PSuite.Bll;
-using PSuite.Models;
-using PSuite.Views;
+using PSuit.Bll;
+using PSuit.Models;
+using PSuit.Views;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Data;
 
-namespace PSuite.ViewModels
+namespace PSuit.ViewModels
 {
     [Export("QueryAllCustomerViewModel", typeof(IViewModel))]
     public class QueryAllCustomerViewModel: ViewModelBase
@@ -37,8 +37,13 @@ namespace PSuite.ViewModels
         {
             IViewModel addCustomerViewModel = ServiceLocator.Current.GetInstance<IViewModel>("AddCustomerViewModel");
             IView addCustomerView = ServiceLocator.Current.GetInstance<IView>("AddCustomerView");
-            ((AddCustomerView)(addCustomerView)).Show();
-            //OpenTabItem("MainTabControl", "客户信息录入", "AddCustomerView");
+            ((AddCustomerView)(addCustomerView)).Show();            
+        }
+        public void UpdateCustomer()
+        {
+            IViewModel updateCustomerViewModel = ServiceLocator.Current.GetInstance<IViewModel>("UpdateCustomerViewModel");
+            IView updateCustomerView = ServiceLocator.Current.GetInstance<IView>("UpdateCustomerView");
+            ((UpdateCustomerView)(updateCustomerView)).Show();
         }
     }
 }

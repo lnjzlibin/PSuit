@@ -2,7 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Windows.Controls;
 
-namespace PSuite.Views
+namespace PSuit.Views
 {
     [Export("AddOrderView", typeof(IView))]
     public partial class AddOrderView : UserControl,IView

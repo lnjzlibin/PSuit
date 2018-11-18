@@ -6,11 +6,11 @@ using Microsoft.Practices.Prism.Commands;
 using System.Windows.Input;
 using System.Windows;
 using Microsoft.Practices.ServiceLocation;
-using PSuite.Views;
-using PSuite.Bll;
-using PSuite.Models;
+using PSuit.Views;
+using PSuit.Bll;
+using PSuit.Models;
 
-namespace PSuite.ViewModels
+namespace PSuit.ViewModels
 {
     [Export("LogInViewModel", typeof(IViewModel))]
     public class LogInViewModel : ViewModelBase
@@ -41,9 +41,9 @@ namespace PSuite.ViewModels
         public void LogIn()
         {
             LogInService service = new LogInService();
-            User user = (User)((LogInView)(this.View)).Resources.FindName("user");
-            user.UserName = "";
-            user.Password = "";
+            User user = new User();
+            user.UserName = userName;
+            user.Password = password;
             if (service.HasUserAndAuthority(user))
             {
                 IViewModel shellViewModel = ServiceLocator.Current.GetInstance<IViewModel>("ShellViewModel");

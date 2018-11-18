@@ -1,12 +1,12 @@
-﻿using PSuite.Dal.AbstractClass;
-using PSuite.Models;
+﻿using PSuit.Dal.AbstractClass;
+using PSuit.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSuite.Dal
+namespace PSuit.Dal
 {
     public class CustomerDal:BaseDal
     {

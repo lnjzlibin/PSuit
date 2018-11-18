@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSuite.ViewModels
+namespace PSuit.ViewModels
 {
     [Export("AddOrderViewModel", typeof(IViewModel))]
     public class AddOrderViewModel: ViewModelBase

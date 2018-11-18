@@ -2,7 +2,7 @@
 using PSuit.Infrastructure.Abstract.Presentation.AbstractClass;
 using System.ComponentModel.Composition;
 
-namespace PSuite.ViewModels
+namespace PSuit.ViewModels
 {
     public class QueryCustomerViewModel:ViewModelBase
     {

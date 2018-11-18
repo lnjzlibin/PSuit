@@ -3,7 +3,7 @@ using PSuit.Infrastructure.Abstract.Presentation.AbstractClass;
 using PSuit.Infrastructure.Abstract.Presentation.Interface;
 using System.ComponentModel.Composition;
 
-namespace PSuite.ViewModels
+namespace PSuit.ViewModels
 {
     [Export("QueryOrderViewModel", typeof(IViewModel))]
      public class QueryOrderViewModel:ViewModelBase

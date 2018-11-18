@@ -2,7 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Windows;
 
-namespace PSuite.Views
+namespace PSuit.Views
 {
     [Export("LogInView", typeof(IView))]
     public partial class LogInView : Window,IView

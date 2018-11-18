@@ -4,16 +4,46 @@ using PSuit.Infrastructure.Abstract.Presentation.AbstractClass;
 using PSuit.Infrastructure.Abstract.Presentation.Interface;
 using System.ComponentModel.Composition;
 using System;
-using PSuite.Bll;
-using PSuite.Models;
+using PSuit.Bll;
+using PSuit.Models;
+using PSuit.Views;
 
-namespace PSuite.ViewModels
+namespace PSuit.ViewModels
 {
     [Export("AddCustomerViewModel", typeof(IViewModel))]
     public class AddCustomerViewModel : ViewModelBase
     {
         public DelegateCommand AddCustomerCommand { get; private set; }
 
+        private string customerName;
+        private string phoneCode;
+
+        public string CustomerName
+        {
+            get
+            {
+                return customerName;
+            }
+
+            set
+            {
+                customerName = value;
+            }
+        }
+
+        public string PhoneCode
+        {
+            get
+            {
+                return phoneCode;
+            }
+
+            set
+            {
+                phoneCode = value;
+            }
+        }
+        
         [ImportingConstructor]
         public AddCustomerViewModel([Import("AddCustomerView", typeof(IView))]  IView view)
         {
@@ -26,9 +56,10 @@ namespace PSuite.ViewModels
         {
             CustomerService service = new CustomerService();
             Customer customer = new Customer();
-            customer.CustomerName = "";
-            customer.PhoneCode = "";
+            customer.CustomerName =customerName;
+            customer.PhoneCode = phoneCode;
             service.AddCustomer(customer);
+            ((AddCustomerView)(this.View)).Close();
         }
     }
 }

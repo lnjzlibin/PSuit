@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PSuite.Properties {
+namespace PSuit.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,8 +25,8 @@ namespace PSuite.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Database=psuit; User=root;Password=libin;Use Procedure Bodies=fa" +
-            "lse;Charset=utf8;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Database=PSuit; User=root;Password=zhaojuan1003;Use Procedure Bo" +
+            "dies=false;Charset=utf8;")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

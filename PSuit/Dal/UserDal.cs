@@ -1,11 +1,11 @@
-﻿using PSuite.Dal.AbstractClass;
+﻿using PSuit.Dal.AbstractClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSuite.Dal
+namespace PSuit.Dal
 {
     public class UserDal:BaseDal
     {
